@@ -1,6 +1,6 @@
 // 생성프로젝트의 기본 구조
 
-package sec01_basicsyntax.EX01_JavaBasicStructure;
+package ch01.sec01_basicsyntax.EX01_JavaBasicStructure;
 
 public class JavaBasicStructure {
 	
