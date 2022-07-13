@@ -1,6 +1,6 @@
 // 기본적인 콘솔 출력방법 --- print, printf, println 차
 
-package sec01_basicsyntax.EX03_ConsoleOutput;
+package ch01.sec01_basicsyntax.EX03_ConsoleOutput;
 
 public class ConsoleOutput {
 	

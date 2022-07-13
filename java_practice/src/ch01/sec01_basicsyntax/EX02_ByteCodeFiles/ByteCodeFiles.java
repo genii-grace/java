@@ -1,6 +1,6 @@
 // 컴파일 후 생성되는 바이트코드 (.class)
 
-package sec01_basicsyntax.EX02_ByteCodeFiles;
+package ch01.sec01_basicsyntax.EX02_ByteCodeFiles;
 
 class A { // A.class
 } 

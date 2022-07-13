@@ -1,6 +1,6 @@
 // 변수와 상수명 짓기
 
-package sec01_datatype.EX02_NamingVariableAndConstant;
+package ch02.sec01_datatype.EX02_NamingVariableAndConstant;
 
 public class NamingVariableAndConstant {
 	

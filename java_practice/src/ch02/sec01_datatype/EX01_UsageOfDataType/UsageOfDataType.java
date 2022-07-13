@@ -1,6 +1,6 @@
 // 변수 선언과 값을 대입하는 두가지 방법 
 
-package sec01_datatype.EX01_UsageOfDataType;
+package ch02.sec01_datatype.EX01_UsageOfDataType;
 
 public class UsageOfDataType {
 	

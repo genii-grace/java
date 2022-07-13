@@ -1,6 +1,6 @@
 //변수의 생존기간 
 
-package sec01_datatype.EX03_RangeOFVariableUse;
+package ch02.sec01_datatype.EX03_RangeOFVariableUse;
 
 public class RangeOfVariableUse {
 	
