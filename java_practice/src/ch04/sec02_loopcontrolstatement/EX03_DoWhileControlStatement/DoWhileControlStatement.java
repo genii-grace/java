@@ -60,6 +60,7 @@ public class DoWhileControlStatement {
 	 	while 과 do-while은 결과 값으나 실행순서가 다르다. 
 		while은 조건문 검사가 선행되고 출력 및 증가 순으로 일어나고
 		do-while은 최초 1회는 출력된 이후에 증가 후 조건문 검사가 진행된다.
+		순서가 다르다 
 	 */
 
 }
