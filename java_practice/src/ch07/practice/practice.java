@@ -54,7 +54,7 @@ public class practice {
 } 
 
 // Q4
-
+*/
 class A{
 	int abc(int m) {
 		m=8; // 지역변수 m 
@@ -78,13 +78,12 @@ class A{
 			System.out.println(Arrays.toString(n));
 			
 			a.bcd(n);
-			
 			System.out.println(m); //main() frame에 있는 지역변수 m 
 			
 			System.out.println(Arrays.toString(n)); // n이 가리키는 주소는 같으나 내용이 변경됨 
 		}
 	}
-	*/
+	/*
 //Q7
 
 class A{
@@ -106,5 +105,5 @@ class A{
 		 System.out.println(a.m); // 필드값 불러오기 
 		 System.out.println(a.n); // 필드값 불러오기 
 		 
-	 }
- }
+	 } */
+ 
