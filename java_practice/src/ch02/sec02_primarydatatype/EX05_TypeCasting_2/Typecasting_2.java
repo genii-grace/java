@@ -31,6 +31,8 @@ public class Typecasting_2 {
 		System.out.println(value7);
 		System.out.println(value8);
 		System.out.println();
+
+		}
 	}
 
-}
+
