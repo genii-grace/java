@@ -1,4 +1,4 @@
-package ch10.sec05_superkeywordsupermethod.EX01_SuperKeyword_1;
+package ch10.sec05_superkeywordsupermethod.EX02_SuperKeyword_2;
 
 class A{
 	void abc() {
@@ -12,17 +12,17 @@ class B extends A{
 	}
 	
 	void bcd() {
-		abc(); // this.abc(); 
-	}
-	
+		super.abc();// 자식 class에서 부모class의 abc 메소드 불러오
+	} 
 }
-public class SuperKeyword_1 {
+public class SuperKeyword_2 {
 
 	public static void main(String[] args) {
-
+		
 		B bb=new B();
 		
 		bb.bcd();
+
 
 	}
 
