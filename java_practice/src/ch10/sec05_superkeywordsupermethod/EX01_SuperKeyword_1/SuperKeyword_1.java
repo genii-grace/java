@@ -5,10 +5,24 @@ class A{
 		System.out.println("abc() of class A");
 	}
 }
+
+class B extends A{
+	void abc() {
+		System.out.println("abc() of class B");
+	}
+	
+	void bcd() {
+		abc(); // this.abc();
+	}
+	
+}
 public class SuperKeyword_1 {
 
 	public static void main(String[] args) {
 
+		B bb=new B();
+		
+		bb.bcd();
 
 	}
 
