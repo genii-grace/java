@@ -12,7 +12,7 @@ class B extends A{
 	}
 	
 	void bcd() {
-		super.abc();// 자식 class에서 부모class의 abc 메소드 불러오
+		super.abc();// 자식 class에서 부모class의 abc 메소드 불러오기 
 	} 
 }
 public class SuperKeyword_2 {
