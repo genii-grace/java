@@ -31,7 +31,7 @@ public class Multicatch_1 {
 			System.out.println(3/0);
 			int num=Integer.parseInt("10A");
 		}
-		catch (ArithmeticException e) {
+		catch (ArithmeticException e) { //위의 실행예외가 먼저 실행되므로 이 블록은 실행되지 않음
 			System.out.println("숫자는 0으로 나눌수 없습니다.");
 		}
 		catch (NumberFormatException e) {
