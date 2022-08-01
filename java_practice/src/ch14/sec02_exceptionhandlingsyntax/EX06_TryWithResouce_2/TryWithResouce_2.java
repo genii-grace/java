@@ -19,6 +19,7 @@ public class TryWithResouce_2 {
 
 	public static void main(String[] args) {
 
+//		리소스를 사용하고 finally에서 리소스 수동해제 
 		A a1=null;
 		try {
 			a1=new A("특정파일");
@@ -36,6 +37,8 @@ public class TryWithResouce_2 {
 			}
 
 		}
+		
+//		리소스 자동해제 
 		try( A a2=new A("특정파일");){
 		
 		}
