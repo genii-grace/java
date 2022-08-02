@@ -42,8 +42,8 @@ class A{
 			System.out.println("예외처리 1");
 		}
 	}
-	void bcd_1() {
-		abc_1(65);
+	void bcd_1(int num) {
+		abc_1(num);
 
 	}
 	
@@ -54,9 +54,9 @@ class A{
 			throw me1; // num이 70보다 작으면 예외발
 	}
 	
-	void bcd_2() {
+	void bcd_2(int num) {
 		try {
-			abc_2(65);
+			abc_2(num);
 		}
 		catch (MyException e) {
 			System.out.println("예외처리 2");
@@ -69,8 +69,8 @@ public class CreateUserException {
 	public static void main(String[] args) {
 
 		A a=new A();
-		a.bcd_1();
-		a.bcd_2();
+		a.bcd_1(80);
+		a.bcd_2(65);
 	}
 
 }
