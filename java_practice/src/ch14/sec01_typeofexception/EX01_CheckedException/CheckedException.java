@@ -11,7 +11,7 @@ class A implements Cloneable{
 public class CheckedException {
 
 	public static void main(String[] args) {
-
+/*
 		Thread.sleep(1000); // InteruuptedException 발생
 		
 		Class cls=Class.forName("java.lang.Object"); // ClassNotFoundException 발생
@@ -23,6 +23,7 @@ public class CheckedException {
 		
 		A a1=new A();
 		A a2=(A)a1.clone(); // CloneNotSupportedException
+		*/
 	}
 
 }
