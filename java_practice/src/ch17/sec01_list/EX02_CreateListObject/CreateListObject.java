@@ -1,4 +1,4 @@
-package ch17.sec_list.EX02_CreateListObject;
+package ch17.sec01_list.EX02_CreateListObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
