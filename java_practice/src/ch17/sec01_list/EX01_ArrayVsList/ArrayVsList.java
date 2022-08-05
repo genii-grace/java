@@ -1,4 +1,4 @@
-package ch17.sce01_list.EX01_ArrayVsList;
+package ch17.sec01_list.EX01_ArrayVsList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
