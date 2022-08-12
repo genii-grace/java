@@ -26,13 +26,13 @@ public class CreateFileObject {
 
 
 
-		File newFile2=new File("temp/newFile.txt");
+		File newFile2=new File("temp\\newFile.txt");
 		File newFile3=new File("temp/newFile.txt");
 		File newFile4=new File("temp"+File.separator+"newFile.txt");
 		
-		System.out.println(newFile2.exists());
-		System.out.println(newFile3.exists());
-		System.out.println(newFile4.exists());
+		System.out.println("newFile.txt 파일이 있나요? : "+newFile2.exists());
+		System.out.println("newFile.txt 파일이 있나요? : "+newFile3.exists());
+		System.out.println("newFile.txt 파일이 있나요? : "+newFile4.exists());
 		
 		File newFile5 = new File("abc/newFile.txt");
 		File newFile6 = new File("abc/bcd/newFile.txt");
