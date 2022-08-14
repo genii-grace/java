@@ -11,14 +11,19 @@ public class ConsoleInputObject_3 {
 		InputStream is = System.in;
 		
 		byte[] byteArray1= new byte[100];
+		
 		int count1=is.read(byteArray1);
+		
 		String str1=new String(byteArray1,0,count1,Charset.forName("UTF-8"));
 		System.out.println(str1);
 		
 		byte[] byteArray2=new byte[9];
+		
 		int offset=3;
 		int length=6;
+		
 		int count2=is.read(byteArray2, offset, length);
+		
 		String str2=new String(byteArray2,0,offset+count2,Charset.defaultCharset());
 		System.out.println(str2);
 		
