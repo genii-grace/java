@@ -13,7 +13,7 @@ public class Main {
         System.out.println("강한친구 대한육군");
         System.out.print("강한친구 대한육군");
          */
-    	
+
 //    	10171
     	/*
     	System.out.println("\\    /\\\n )  ( \')\n(  /  )\n \\(__)|");
@@ -22,7 +22,7 @@ public class Main {
 //    	10172
     	/*
     	System.out.println("|\\_/|\n|q p|   /}\n( 0 )\"\"\"\\\n|\"^\"`    |\n||_/=\\\\__|\n");
-    	*/
+	*/
     	
 //    	1000
     	
