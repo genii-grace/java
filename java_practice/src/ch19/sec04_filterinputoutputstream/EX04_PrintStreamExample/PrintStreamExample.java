@@ -28,6 +28,8 @@ public class PrintStreamExample {
 		
 		try(PrintStream ps = new PrintStream(outFile2);){
 			ps.println(5.8);
+			
+			
 			ps.print(3+"HI"+12345+"\n");
 			ps.printf("%d", 7).printf("%s %f","안녕",5.8);
 			ps.println();
