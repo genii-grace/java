@@ -23,6 +23,19 @@ public class InetAddressObjectAndMethod {
 		System.out.println(ia4);
 		System.out.println(ia5);
 		
+		InetAddress[] ia6=InetAddress.getAllByName("www.naver.com");
+		System.out.println(Arrays.toString(ia6));
+		System.out.println();
+		
+		byte[] address =ia1.getAddress();
+		System.out.println(Arrays.toString(address));
+		System.out.println(ia1.getHostAddress());
+		System.out.println(ia1.getHostName());
+		System.out.println();
+		System.out.println(ia1.isReachable(1000));
+		System.out.println(ia1.isLoopbackAddress());
+		System.out.println(ia1.isMulticastAddress());
+		
 		
 
 	}
