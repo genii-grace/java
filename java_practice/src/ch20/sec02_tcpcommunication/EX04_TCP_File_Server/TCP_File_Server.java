@@ -34,9 +34,11 @@ public class TCP_File_Server {
 			DataInputStream dis = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 			DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
 			
-			String receivedFileName=dis.readUTF(); //전송받은 파일 이름
+//			전송받은 파일 이름 확인 
+			String receivedFileName=dis.readUTF(); 
 			System.out.println("파일 수신 : "+receivedFileName);
 			
+//			파일 쓰기 
 			File file = new File("chap20/"+receivedFileName);
 			
 			FileOutputStream fos = new FileOutputStream(file);
