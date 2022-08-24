@@ -18,16 +18,18 @@ public class ConnectionUDP_File_A {
 		
 //		소켓 생성 및 바인딩
 		DatagramSocket ds=null;
-		try {ds=new DatagramSocket(10000); 
+		try {ds=new DatagramSocket(11006); 
 //		원격지와 커넥트 
-			ds.connect(new InetSocketAddress("localhost",20000));}
+			ds.connect(new InetSocketAddress("localhost",22006));}
 		catch (SocketException e) {e.printStackTrace();}
+		System.out.println("...소켓 생성 및 바인딩 완료...");
 		
 //		파일 로딩
 		File file=new File("chap20/ImgFileUsingUDP.jpg");
 		BufferedInputStream bis = null;
 		try { bis = new BufferedInputStream(new FileInputStream(file));}
 		catch (FileNotFoundException e) {e.printStackTrace();}
+		System.out.println("...파일 로딩 완료...");
 		
 //		파일이름, 사인, 파일 전송, 사인
 		DatagramPacket sendPacket = null;
@@ -37,12 +39,14 @@ public class ConnectionUDP_File_A {
 		sendPacket = new DatagramPacket(fileName.getBytes(),fileName.getBytes().length);
 		try {ds.send(sendPacket);}
 		catch (IOException e) {e.printStackTrace();}
+		System.out.println("...파일명 전송완료 ...");
 		
 //		2. 파일 전송 시작을 알리는 사인 전송
 		String startSign="/start";
 		sendPacket = new DatagramPacket(startSign.getBytes(),startSign.getBytes().length);
 		try {ds.send(sendPacket);}
 		catch (IOException e) {e.printStackTrace();}
+		
 		
 //		3. 파일 쪼개서 전송
 		int len;
@@ -59,6 +63,8 @@ public class ConnectionUDP_File_A {
 		sendPacket = new DatagramPacket(endSign.getBytes(),endSign.getBytes().length);
 		try { ds.send(sendPacket); }
 		catch (IOException e) {e.printStackTrace();}
+		
+		System.out.println("...파일전송 완료...");
 		
 //		데이터그램 텍스트 패킷 수신
 		byte[] receivedData = new byte[655508];

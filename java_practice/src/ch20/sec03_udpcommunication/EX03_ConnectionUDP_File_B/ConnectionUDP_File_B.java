@@ -18,9 +18,9 @@ public class ConnectionUDP_File_B {
 		
 //		DatagramSocket 생성  및 바인딩
 		DatagramSocket ds =null;
-		try { ds=new DatagramSocket(20000);
+		try { ds=new DatagramSocket(22006);
 //		원격지커넥트
-		ds.connect(new InetSocketAddress("localhost",10000));
+		ds.connect(new InetSocketAddress("localhost",11006));
 		}catch (SocketException e) {e.printStackTrace();}
 		
 //		패킷 수신할 데이터 배열, 패킷 생성 
@@ -35,7 +35,7 @@ public class ConnectionUDP_File_B {
 		String fileName=new String(receivedPacket.getData(),0,receivedPacket.getLength());
 		
 //		수신한 파일이름으로 만들어질 파일명 지정
-		File file=new File("chap20/"+fileName);
+		File file=new File("chap20/test/"+fileName);
 		BufferedOutputStream bos=null;
 		try {bos = new BufferedOutputStream(new FileOutputStream(file));}
 		catch ( FileNotFoundException e) {e.printStackTrace();}
