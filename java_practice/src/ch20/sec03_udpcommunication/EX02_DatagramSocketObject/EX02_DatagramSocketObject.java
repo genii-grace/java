@@ -45,7 +45,6 @@ public class EX02_DatagramSocketObject {
 		byte[] data1="수신지 주소가 없는 데이터그램 패킷".getBytes();
 		byte[] data2="수신지 주소가 있는 데이터그램 패킷".getBytes();
 		
-		
 //		전송할 데이터를 패킷화 
 		DatagramPacket dp1=new DatagramPacket(data1, data1.length);
 		DatagramPacket dp2=new DatagramPacket(data2,data2.length, new InetSocketAddress("localhost", 10002)); //도착지가 10002 번 
