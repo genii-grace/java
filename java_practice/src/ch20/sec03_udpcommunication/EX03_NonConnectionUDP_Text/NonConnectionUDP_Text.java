@@ -15,12 +15,12 @@ public class NonConnectionUDP_Text {
 		
 //		소켓 객체 생성 후 바인딩 
 		DatagramSocket ds=null;
-		try { ds=new DatagramSocket(10000);}
+		try { ds=new DatagramSocket(10010);}
 		catch(SocketException e) {e.printStackTrace();}
 		
 //		전송데이터 생성 후 패킷 생성
 		byte[] sendData="안녕하세요".getBytes();
-		DatagramPacket sendPacket =new DatagramPacket(sendData,sendData.length, new InetSocketAddress("localhost",20000));
+		DatagramPacket sendPacket =new DatagramPacket(sendData,sendData.length, new InetSocketAddress("172.30.1.8", 20010));
 		
 //		패킷 전송
 		System.out.println("송신 데이터 : "+new String(sendPacket.getData(),0,sendPacket.getLength()));

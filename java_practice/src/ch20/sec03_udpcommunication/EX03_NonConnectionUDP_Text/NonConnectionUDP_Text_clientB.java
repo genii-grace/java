@@ -14,7 +14,7 @@ public class NonConnectionUDP_Text_clientB {
 		DatagramSocket ds=null;
 		
 		try {
-			ds=new DatagramSocket(20000);
+			ds=new DatagramSocket(20010);
 		}catch (SocketException e) {e.printStackTrace();}
 		
 		byte[] receivedData = new byte[65508];
