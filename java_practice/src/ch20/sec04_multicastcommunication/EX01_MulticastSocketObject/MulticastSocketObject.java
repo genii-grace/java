@@ -60,6 +60,7 @@ public class MulticastSocketObject {
 			System.out.println("mcs2 가 수신한 데이터 : "+new String(receivedPacket.getData()).trim());
 			System.out.println("송신지 : "+receivedPacket.getSocketAddress());
 
+			
 			receivedData = new byte[65508];
 			receivedPacket = new DatagramPacket(receivedData, receivedData.length);
 			mcs3.receive(receivedPacket);
