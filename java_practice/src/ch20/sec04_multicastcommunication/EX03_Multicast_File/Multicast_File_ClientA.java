@@ -39,9 +39,9 @@ public class Multicast_File_ClientA {
 		sendPacket = new DatagramPacket(fileName.getBytes(), fileName.length(), multicastAddress, multicastPort);
 		try { mcs.send(sendPacket);}
 		catch(IOException e) {e.printStackTrace();}
-		System.out.println(fileName+" 파일 전송 시작 ");
 		
-//		시작사인 전송
+//		시작 사인 전송		
+		System.out.println(fileName+" 파일 전송 시작 ");
 		String startSign = "/strat";
 		sendPacket = new DatagramPacket(startSign.getBytes(), startSign.length(), multicastAddress , multicastPort);
 		try {mcs.send(sendPacket);}
@@ -63,11 +63,11 @@ public class Multicast_File_ClientA {
 		try {mcs.send(sendPacket);}
 		catch(IOException e) {e.printStackTrace();}
 		
-//		멀티그룹 가입 
+//		멀티캐스트 그룹 가입 
 		try {mcs.joinGroup(multicastAddress);}
 		catch(IOException e) {e.printStackTrace();}
 		
-//		전송파일 받기
+//		전송 피드백  받기
 		byte[] receivedData = new byte[65508];
 		DatagramPacket receivedPacket =null;
 		try { receivedPacket = new DatagramPacket(receivedData, receivedData.length);

@@ -27,7 +27,7 @@ public class Multicast_File_ClientB {
 		try { mcs = new MulticastSocket(multicastPort);}
 		catch (IOException e) {e.printStackTrace();}
 		
-//		멀티캐스트 가입
+//		멀티캐스트 그룹 가입
 		try { mcs.joinGroup(multicastAddress);}
 		catch (IOException e) {e.printStackTrace();}
 
@@ -38,9 +38,9 @@ public class Multicast_File_ClientB {
 		mcs.receive(receivedPacket);}
 		catch(IOException e) {e.printStackTrace();}
 		String fileName = new String(receivedPacket.getData()).trim();
-		System.out.println("파일 수신 시작...");
 		
 //		파일 수신
+		System.out.println("파일 수신 시작...");
 		File file = new File("chap20/test/"+fileName);
 		BufferedOutputStream bos = null;
 		try {
@@ -61,16 +61,14 @@ public class Multicast_File_ClientB {
 				if(new String(receivedPacket.getData(),0,receivedPacket.getLength()).equals(endSign)) 
 					break; 
 				bos.write(receivedPacket.getData(),0,receivedPacket.getLength());
-				bos.flush();
-			}
-			}
+				bos.flush();}}
 			}catch (IOException e) {e.printStackTrace();}
 		
 		try {bos.close();}
 		catch (IOException e) {e.printStackTrace();}
 		System.out.println("파일 수신 완료 ");
 		
-//		그룹해제
+//		멀티캐스트 그룹 해제
 		try { mcs.leaveGroup(multicastAddress);}
 		catch (IOException e) {e.printStackTrace();}
 		
