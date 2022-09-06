@@ -1,4 +1,0 @@
-InputStreamReader 예제
-한글과 영문이 모두 포함되어있음
-파일을 읽어온 예시임
-Goodbye!
