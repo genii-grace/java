@@ -1,5 +1,7 @@
 package Day01;
 
+import java.util.Scanner;
+
 public class HelloWorld {
 
 	public static void main(String[] args) {
@@ -22,6 +24,8 @@ public class HelloWorld {
 		
 		a='가';
 		System.out.println(a);
+		
+
 	}
 
 }
