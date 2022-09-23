@@ -21,32 +21,51 @@ public class Q2 {
 		
 		// 입력받은 id, pw 저장하기 
 		System.out.print("id 입력 : ");
-		String scid = sc.next();
+		String userId = sc.next();
 		
 		System.out.print("pw 입력 : ");
-		String scpw = sc.next();
+		String userPw = sc.next();
 		
 		// 설정값과 입력받은 값 비교
 		
 		//id, pw 동일 
-		if(id.equals(scid) && pw.equals(scpw)) {
+		if(id.equals(userId) && pw.equals(userPw)) {
 			System.out.println("환영합니다. "+id+"님");
 		}
 		
 		//id, pw 모두 다를때 
-		else if(!(id.equals(scid)) && !(pw.equals(scpw))) {
+		else if(!(id.equals(userId)) && !(pw.equals(userPw))) {
 				System.out.println("id와 pw가 올바르지 않습니다.");
 			}
 
 		// 둘중에 하나가 다를때 
 		else {
-			if(id.equals(scid)) {
+			if(id.equals(userId)) {
 				System.out.println("pw가 올바르지 않습니다.");
 			}
 			else {
 			System.out.println("id가 올바르지 않습니다.");
 			}
 		}
+		
+		/* 강사님 풀이
+		
+		if(id.equals(userId) && pw.equals(userPw)) {
+			System.out.println("환영합니다. "+id+"님");
+		}
+		
+		else if(!id.equals(userId) && pw.equals(userPw)) {
+			System.out.println("id가 올바르지 않습니다.");
+		}
+		
+		else if(id.equals(userId) && !pw.equals(userPw)) {
+			System.out.println("pw가 올바르지 않습니다.");
+		}
+		
+		else {
+			System.out.println("id와 pw가 올바르지 않습니다.");
+		
+		 */
 		
 		
 
