@@ -32,12 +32,10 @@ public class IfTest1 {
 		
 		if(grade>=90 && grade<=100) {
 			System.out.println("축하합니다 합격입니다.");
-			System.out.println("대단하네요!");
 		}
 		
 		else if(grade >=0 && grade <90) {
 			System.out.println("아쉽지만 불합격입니다.");
-			System.out.println("공부하셨나요?");
 		}
 		
 		else 
