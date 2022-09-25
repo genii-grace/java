@@ -48,30 +48,30 @@ public class HW2 {
 
 		//3. 학점출력 
 		if(kor>=0&&kor<=100&&eng>=0&&eng<=100&&math>=0&&math<=100) {
-		if(avg>=95){
-			System.out.printf("평균 점수는 %.1f, 학점은 A+ 입니다.",avg);
-		}
-		else if(avg>=90){
-			System.out.printf("평균 점수는 %.1f, 학점은 A 입니다.",avg);
-		}
-		else if(avg>= 85) {
-			System.out.printf("평균 점수는 %.1f, 학점은 B+ 입니다.",avg);
-		}
-		else if(avg>=80) {
-			System.out.printf("평균 점수는 %.1f, 학점은 B 입니다.",avg);
-		}
-		else if(avg>=75) {
-			System.out.printf("평균 점수는 %.1f, 학점은 C+ 입니다.",avg);
-		}
-		else if(avg>=70) {
-			System.out.printf("평균 점수는 %.1f, 학점은 C 입니다.",avg);
-		}
-		else if(avg>=65) {
-			System.out.printf("평균 점수는 %.1f, 학점은 D 입니다.",avg);
-		}
-		else {
-			System.out.printf("평균 점수는 %.1f, 학점은 F 입니다.",avg);
-		}
+			if(avg>=95){
+				System.out.printf("평균 점수는 %.1f, 학점은 A+ 입니다.",avg);
+			}
+			else if(avg>=90){
+				System.out.printf("평균 점수는 %.1f, 학점은 A 입니다.",avg);
+			}
+			else if(avg>= 85) {
+				System.out.printf("평균 점수는 %.1f, 학점은 B+ 입니다.",avg);
+			}
+			else if(avg>=80) {
+				System.out.printf("평균 점수는 %.1f, 학점은 B 입니다.",avg);
+			}
+			else if(avg>=75) {
+				System.out.printf("평균 점수는 %.1f, 학점은 C+ 입니다.",avg);
+			}
+			else if(avg>=70) {
+				System.out.printf("평균 점수는 %.1f, 학점은 C 입니다.",avg);
+			}
+			else if(avg>=65) {
+				System.out.printf("평균 점수는 %.1f, 학점은 D 입니다.",avg);
+			}
+			else {
+				System.out.printf("평균 점수는 %.1f, 학점은 F 입니다.",avg);
+			}
 		}
 		//4.잘못된 과목 이름 출력 
 		else { 

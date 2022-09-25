@@ -7,7 +7,7 @@ public class Q1_1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//월과 계절을 입력받음
+		//월과 온도 입력받음
 		// 3~5월 봄, 6~8월 여름, 9~11월 가을, 12월~2월 겨울
 		// 3~15도 봄, 18~37도 여름,3~15도 가을, 2~-15도 겨울 
 		// 그외 월, 온도는 잘못된 출력 
