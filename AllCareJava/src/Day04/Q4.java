@@ -17,7 +17,7 @@ public class Q4 {
 
 		System.out.println("2.");
 		for(int i=0; i<5; i++) {
-			for (int j=0; j<i+1; j++) {
+			for (int j=0; j<i+1; j++) { // sol. for(int j=0; j<=i; j++)
 				System.out.print("*");
 			}System.out.println();
 		}
@@ -32,16 +32,30 @@ public class Q4 {
 				}
 			}System.out.println();
 		}
+		/*
+		 * for(int j=4; j>=0; j--){
+		 * 	if(i<j){
+		 * 		System.out.print(" ");
+		 * 	}
+		 * 	else{
+		 * 		System.out.print("*");
+		 * 	} 
+		 */
+		
 
 		System.out.println("4.");
 		for(int i=0; i<5; i++) {
 			for(int k=0; k<(5-i); k++) {
 				System.out.print(" ");
 			}
-			for(int j=0; j<(2*i+1); j++) {
+			for(int j=0; j<(2*i+1); j++) { //sol. for(int j=0; j<=2*i; j++)
 				System.out.print("*");
 			}System.out.println();
 		}
+		
+		
+		
+		
 		System.out.println("5.");
 		for(int i=0; i<5; i++) {
 			for(int k=0; k<(5-i); k++) {
@@ -59,47 +73,8 @@ public class Q4 {
 				System.out.print("*");
 			}System.out.println();
 		}
-		
-
-
-
-
+	
 	}
 	
 }
 
-
-
-
-
-
-/*
-i=0; j=0; *
-i=0; j=1; **
- ***
- ****
- *****
-
-
-
- *****
- *****
- *****
- *****
- *****
-
-
- *
- **
- ***
- ****
- *****
-
- *
- **
- ***
- ****
- *****
-
-
- */
