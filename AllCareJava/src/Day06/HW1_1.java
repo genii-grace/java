@@ -14,11 +14,14 @@ public class HW1_1 {
 		 * 일반변수로 만들기 (배열사용x)
 		 */
 
-		int ball=0;
-		int strike=0;
+		
 		boolean check1=true;
-		boolean check2=true;
 
+
+		Scanner sc = new Scanner(System.in);
+		
+		
+			
 		//1. COM랜덤수 세자리 받기 (1~9)
 		Random r = new Random(); //랜덤수 세개 받기
 		int r1=r.nextInt(9)+1;
@@ -32,10 +35,14 @@ public class HW1_1 {
 		}
 		System.out.println(r1+","+r2+","+r3);
 
-		//2. 입력 받기 
-		Scanner sc = new Scanner(System.in);
+
+		//2. 입력 받기 	
 		while(check1) {
-			check2=true;
+			
+			boolean check2=true;
+			int ball=0;
+			int strike=0;
+			
 			System.out.print("첫번째 숫자를 입력하세요 : ");
 			//첫번째 숫자 입력
 			int num1 = sc.nextInt();
@@ -86,6 +93,7 @@ public class HW1_1 {
 									if(r3==num1) {ball++;}
 									
 									System.out.println(strike+"스트라이크, "+ball+"볼");
+	
 									check2=false;
 								}
 								else{
