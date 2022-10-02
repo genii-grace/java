@@ -17,15 +17,16 @@ public class HW1 {
 		
 		Random r = new Random();
 		
+		char a='A';
+		
 		System.out.println("랜덤수 : ");
 		for(int i=0; i<10; i++) {
-			int ranNum = r.nextInt();
-			System.out.print(ranNum+" ");
+			int ranNum = r.nextInt(26);
+			System.out.print((char)(ranNum+a)+" ");
+				
+			}
 			
-		
-		
-		
 		}
 	}
 
-}
+
