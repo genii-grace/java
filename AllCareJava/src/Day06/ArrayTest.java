@@ -1,7 +1,5 @@
 package Day06;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-
 public class ArrayTest {
 
 	public static void main(String[] args) {
