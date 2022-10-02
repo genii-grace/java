@@ -7,7 +7,7 @@ public class Q2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//입력받은 id와 pw 를 선언해둔 정보와 비교하여 출력하기
+		// 입력받은 id와 pw 를 선언해둔 정보와 비교하여 출력하기
 		// 일치하면  환영합니다.
 		// id 가 틀린경우 : 아이디가 올바르지않습니다.
 		// pw 가 틀린경우 : pw 가 올바르지 않습니다.

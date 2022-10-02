@@ -19,10 +19,8 @@ public class IfTest1 {
 		// 0보다 작은 값 또는 100보다 큰 값을 넣었을 경우에도 결과가 나오므로 해당 부분도 조건으로 잡아줘야 함
 		if(grade>=90) { 
 			System.out.println("축하합니다 합격입니다.");
-			System.out.println("대단하네요!");
 		}else {
 			System.out.println("아쉽지만 불합격입니다.");
-			System.out.println("공부하셨나요?");
 		}
 		*/
 		
@@ -33,18 +31,10 @@ public class IfTest1 {
 		if(grade>=90 && grade<=100) {
 			System.out.println("축하합니다 합격입니다.");
 		}
-		
 		else if(grade >=0 && grade <90) {
 			System.out.println("아쉽지만 불합격입니다.");
 		}
-		
 		else 
 			System.out.println("잘못된 입력입니다.");
-		
-		
 	}
-		
-
-	
-
 }
