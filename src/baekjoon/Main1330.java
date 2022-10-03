@@ -18,10 +18,11 @@ public class Main1330 {
 		//입력
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("숫자를 입력하세요 : ");
 		int a = sc.nextInt();
 		int b = sc.nextInt();
 		
-		sc.close();
+		sc.close(); //콘솔 입력 마감 
 		
 		if (a>b) {
 			System.out.print(">");
