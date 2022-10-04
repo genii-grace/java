@@ -20,13 +20,13 @@ public class Q1 {
 
 		Scanner sc = new Scanner(System.in);
 
-		boolean check = true;
+
 		int count=0;
 
 		String[][] fly= new String[9][2];
 
 		//1. 남은 자리 체크 
-		while(check) {
+		while(true) {
 			count=0;
 			for(int i=0; i<fly.length; i++) {
 				for(int j=0; j<fly[i].length; j++) {
@@ -37,7 +37,7 @@ public class Q1 {
 			}
 			if(count==0) {
 				System.out.println("예약 할 수 있는 자리가 없습니다.");
-				check=false;
+				
 			}
 			else {
 				//2. 자리 인덱스 입력받기 
