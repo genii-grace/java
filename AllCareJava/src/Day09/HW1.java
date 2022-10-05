@@ -1,5 +1,7 @@
 package Day09;
 
+import java.util.Scanner;
+
 public class HW1 {
 
 	public static void main(String[] args) {
@@ -13,6 +15,10 @@ public class HW1 {
 		 *  13	12	11	10	9
 		 */
 
+		Scanner sc = new Scanner(System.in);
+		System.out.print("숫자 입력 : ");
+		int num=sc.nextInt();
+		
 		int x=0;//행
 		int y=0;//열
 		
@@ -20,17 +26,17 @@ public class HW1 {
 		
 		int n=1;//반복 
 		int sw=1;// 짝수/홀수 분기 
-		int[][] dal = new int[5][5];
+		int[][] dal = new int[num][num];
 
 
 		//첫줄은 기본 출력 
-		for(int i=0; i<5; i++) { 
+		for(int i=0; i<num; i++) { 
 			dal[x][y++]= count++;
 			}
 
 		y-=1; //x=4, y=4인 상태로 세팅
 
-		while(n<5) {
+		while(n<num) {
 			if(sw==1) { //숫자가 짝수개 찍히는 구간 
 				for(int i=0; i<dal.length-n; i++) {
 					dal[++x][y]=count++;
