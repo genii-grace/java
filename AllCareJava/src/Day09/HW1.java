@@ -19,7 +19,7 @@ public class HW1 {
 		int count=1;//값 
 		
 		int n=1;//반복 
-		int sw=1;//분기 
+		int sw=1;// 짝수/홀수 분기 
 		int[][] dal = new int[5][5];
 
 
