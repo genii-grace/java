@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class HW_no22 {
 	static Random r = new Random();
 	static Scanner sc = new Scanner(System.in);
+
 	static int[] com = new int[3];
 	static int[] user = new int[3];
+
 
 	static int randomMake(Random r) { //랜덤수 
 		return r.nextInt(9)+1;
@@ -17,17 +19,19 @@ public class HW_no22 {
 		return sc.nextInt();
 	}
 
+	
+	
 	static int[] comRandom() { //컴퓨터 랜덤수 
 
-		for(int i=0; i<3; i++) {
+		for (int i=0; i<3; i++) {
 			com[i]=randomMake(r);
 			for(int j=0; j<i; j++) {
-				if(com[i]==com[j]) { //중복제거
-					i--; //중복인 경우 i를 낮춰서 재입력 받기 
+				if(com[i]==com[j]) {
+					i--;
 				}
 			}
-
 		}
+
 		System.out.print("com 랜덤수 : ");
 		for(int i=0; i<3; i++) {
 			System.out.print(+com[i]);
@@ -37,8 +41,10 @@ public class HW_no22 {
 		return com;
 	}
 
+
 	static int[] userNum() {
-		
+
+
 		for(int i=0; i<3; i++) {
 			System.out.print((i+1)+"번째 숫자 입력 : ");
 			user[i] = scannerMake(sc);
@@ -54,17 +60,19 @@ public class HW_no22 {
 					System.out.println("중복입니다.");
 					i--;
 					break;
-				} 
-			}
 
+				}
+			}
 		}
 		return user;
-	}
-	
+	} 
+
+
+
 	static void baseball(int[] comRandom, int[] userNum) {
 		int strike=0;
 		int ball=0;
-		
+
 		for(int i=0; i<3; i++) { //USER
 			for(int j=0; j<3; j++) {//COM
 				if(user[i]==com[j]) {// 값 비교 
@@ -88,7 +96,7 @@ public class HW_no22 {
 			System.out.println(strike+"스트라이크, "+ball+"볼");
 		}
 	}
-	
+
 	public static void main(String[] args) {
 
 		//야구게임의 메서드화 
