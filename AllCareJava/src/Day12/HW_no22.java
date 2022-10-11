@@ -4,6 +4,19 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HW_no22 {
+	
+	//야구게임의 메서드화 
+
+	/* 설명 : 
+	 * 1. 컴퓨터 랜덤수 생성, 중복제거, 1~9 이내 
+	 * 2. 유저 숫자 입력, 중복제거, 1~9 이내 
+	 * 3. 컴퓨터와 유저숫자 비교 
+	 * 3-1. 자리와 숫자가 같음 : strike
+	 * 3-2. 숫자는 같지만 자리가 다름 : ball
+	 * 3-3. strike, ball 없으면 out, 3strike 이면 홈런 -> 게임 종료  
+	 * 4. strike, ball 출력 
+	 */
+	
 	static Random r = new Random();
 	static Scanner sc = new Scanner(System.in);
 
@@ -19,16 +32,28 @@ public class HW_no22 {
 		return sc.nextInt();
 	}
 
-	
-	
+	static boolean sameValue(int[] a, int[] b, int i) {
+
+		boolean result=false;
+
+		for(int j=0;j<i;j++) {
+			if(a[i]==b[j]){
+				result=true;
+			}
+			else {
+				result=false;
+			}
+		}
+
+		return result;
+	}
+
 	static int[] comRandom() { //컴퓨터 랜덤수 
 
 		for (int i=0; i<3; i++) {
 			com[i]=randomMake(r);
-			for(int j=0; j<i; j++) {
-				if(com[i]==com[j]) {
-					i--;
-				}
+			if(sameValue(com, com, i)){
+				i--;
 			}
 		}
 
@@ -44,7 +69,6 @@ public class HW_no22 {
 
 	static int[] userNum() {
 
-
 		for(int i=0; i<3; i++) {
 			System.out.print((i+1)+"번째 숫자 입력 : ");
 			user[i] = scannerMake(sc);
@@ -53,27 +77,20 @@ public class HW_no22 {
 				i--;
 				continue;
 			}
-			for(int j=0; j<i;j++) { // 중복제거
-				if(user[i]==user[j]) { 
-					//j는 다음 입력자리를 뜻함 i=0일 때는 가장 처음 입력이므로 중복비교하지않고
-					//i=0으로 넘어간 후 j=0 일때 같으면 순서를 낮춤 
-					System.out.println("중복입니다.");
-					i--;
-					break;
-
-				}
+			if(sameValue(user, user, i)) {
+				System.out.println("중복입니다.");
+				i--;
 			}
 		}
 		return user;
 	} 
-
-
 
 	static void baseball(int[] comRandom, int[] userNum) {
 		int strike=0;
 		int ball=0;
 
 		for(int i=0; i<3; i++) { //USER
+		
 			for(int j=0; j<3; j++) {//COM
 				if(user[i]==com[j]) {// 값 비교 
 					if(i==j) {
@@ -98,18 +115,6 @@ public class HW_no22 {
 	}
 
 	public static void main(String[] args) {
-
-		//야구게임의 메서드화 
-
-		/*
-		 * 1. 컴퓨터 랜덤수 생성, 중복제거, 1~9 이내 
-		 * 2. 유저 숫자 입력, 중복제거, 1~9 이내 
-		 * 3. 컴퓨터와 유저숫자 비교 
-		 * 3-1. 자리와 숫자가 같음 : strike
-		 * 3-2. 숫자는 같지만 자리가 다름 : ball
-		 * 3-3. strike, ball 없으면 out, 3strike 이면 홈런 -> 게임 종료  
-		 * 4. strike, ball 출력 
-		 */
 
 		baseball(comRandom(), userNum());
 
