@@ -66,7 +66,6 @@ public class HW_no22 {
 		return com;
 	}
 
-
 	static int[] userNum() {
 
 		for(int i=0; i<3; i++) {
