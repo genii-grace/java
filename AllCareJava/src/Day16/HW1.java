@@ -6,8 +6,14 @@ class Ju {
 	Random r = new Random();
 	
 	String name;
-	int hap;
-	int num;
+	
+	/*
+	 * 강사님 피드백 : 
+	 * 객체지향의 측면에서는 랜덤값만 만들어주고 
+	 * 합값은 메인문에서 발생하는것이 정석
+	 */
+	int hap; //main
+	int num; //main 
 	
 	Ju(String name){
 		
@@ -18,14 +24,14 @@ class Ju {
 	int juHap() {
 		
 		num=r.nextInt(6)+1;
-		hap += num;
+		hap += num; //main
 		
-		System.out.println(name+" - 랜덤수 : "+num+", 합 : "+hap);
+		System.out.println(name+" - 랜덤수 : "+num+", 합 : "+hap); //main
 		
 		return hap;
 	}
 	
-	void result() {
+	void result() { //main 
 		System.out.println("\n먼저 50이상 되는 주사위는 "+name+" 입니다.");
 	}
 }
