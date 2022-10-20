@@ -74,7 +74,6 @@ class Ref{
 	void function() {
 		System.out.println("제조사가 "+brand+" 인 "+type+" 형 "+size+" 냉장고가 식품을 관리한다.");
 	}
-
 }
 class Market{
 
@@ -87,6 +86,10 @@ class Market{
 
 	void market() { // 마켓 공간에 제품 진열하기 
 
+		/*
+		 * 강사님 피드백 : for(int i=0; i<10; i++) 로 하고
+		 * if(i<5) 로 분기 넣어서 돌려도 됨 
+		 */
 		for(int i=0; i<5; i++) {
 			com[i]=new Computer("삼성","i7",200);
 			ac[i]=new AirCorn("삼성","벽걸이",100);
@@ -100,7 +103,6 @@ class Market{
 			acn[i]=new AirCleaner("엘지",80);
 			r[i]=new Ref("엘지","4도어","800L",350);
 		}
-
 	}
 
 	boolean comStock(int num) {
@@ -122,10 +124,70 @@ class Market{
 			}
 			return false;
 		}
-
 	}
 
+	boolean acStock(int num) {
+		if(num==1) {//삼성 0~4
+			for(int i=0; i<5; i++) {
+				if(this.ac[i]!=null) {
+					this.stock=i;
+					return true;
+				}
+			}
+			return false;
+		}
+		else { //엘지 5~9
+			for(int i=5; i<10; i++) {
+				if(this.ac[i]!=null) {
+					this.stock=i;
+					return true;
+				}
+			}
+			return false;
+		}
+	}
 
+	boolean acnStock(int num) {
+		if(num==1) {//삼성 0~4
+			for(int i=0; i<5; i++) {
+				if(this.acn[i]!=null) {
+					this.stock=i;
+					return true;
+				}
+			}
+			return false;
+		}
+		else { //엘지 5~9
+			for(int i=5; i<10; i++) {
+				if(this.acn[i]!=null) {
+					this.stock=i;
+					return true;
+				}
+			}
+			return false;
+		}
+	}
+
+	boolean rStock(int num) {
+		if(num==1) {//삼성 0~4
+			for(int i=0; i<5; i++) {
+				if(this.r[i]!=null) {
+					this.stock=i;
+					return true;
+				}
+			}
+			return false;
+		}
+		else { //엘지 5~9
+			for(int i=5; i<10; i++) {
+				if(this.r[i]!=null) {
+					this.stock=i;
+					return true;
+				}
+			}
+			return false;
+		}
+	}
 }
 
 class Client{
@@ -134,10 +196,8 @@ class Client{
 	int money;
 
 	Client(String name, int money){
-
 		this.name=name;
 		this.money=money;
-
 	}
 
 	Computer[] com = new Computer[10];
@@ -146,7 +206,6 @@ class Client{
 	Ref[] r = new Ref[10];
 
 	boolean moneyCheck(int product) {
-
 		if(product<this.money) {
 			return true;
 		}
@@ -161,10 +220,31 @@ class Client{
 	void moneyPrint() {
 		System.out.println(name+"이 가진 금액은 총 "+money+"입니다.");
 	}
-
+	
+	void productCheck() {
+		for(int i=0; i<10;i++) {
+			if(com[i]!=null) {
+				com[i].function();
+			}
+			if(ac[i]!=null) {
+				ac[i].function();
+			}
+			if(acn[i]!=null) {
+				acn[i].function();
+			}
+			if(r[i]!=null) {
+				r[i].function();
+			}
+		}
+	}
 }
 
 class BuySystem{
+
+	/*
+	 *  마켓에서 사고파는게 실행되므로 
+	 *  마켓 내 메서드로 작성 
+	 */
 
 	void comBuy(Client c, Market m, int product){
 		System.out.println("구매완료");
@@ -176,22 +256,50 @@ class BuySystem{
 				break;
 			}
 		}
-
 	}
-}
 
-public class HW1_market {
+	void acBuy(Client c, Market m, int product){
+		System.out.println("구매완료");
+		for(int i=0;i<c.com.length; i++) {
+			if(c.ac[i]==null) {
+				c.ac[i]=m.ac[m.stock];
+				m.ac[m.stock]=null;
+				c.money-=product;
+				break;
+			}
+		}
+	}
 
-	static void buycontroller(Client c, Market m) {
+	void acnBuy(Client c, Market m, int product){
+		System.out.println("구매완료");
+		for(int i=0;i<c.com.length; i++) {
+			if(c.acn[i]==null) {
+				c.acn[i]=m.acn[m.stock];
+				m.acn[m.stock]=null;
+				c.money-=product;
+				break;
+			}
+		}
+	}
+
+	void rBuy(Client c, Market m, int product){
+		System.out.println("구매완료");
+		for(int i=0;i<c.com.length; i++) {
+			if(c.r[i]==null) {
+				c.r[i]=m.r[m.stock];
+				m.r[m.stock]=null;
+				c.money-=product;
+				break;
+			}
+		}
+	}
+	void buycontroller(Client c, Market m) {
 		Scanner sc = new Scanner(System.in);
-		BuySystem by = new BuySystem();
-		
-		System.out.println(c.name+" 상품을 선택하세요. 1.컴퓨터 2.에어컨 3.냉장고 4.공기청정기 ");
+		System.out.println(c.name+" 상품을 선택하세요. \n1.컴퓨터 2.에어컨 3.냉장고 4.공기청정기 ");
 		int num=sc.nextInt();
-
 		//컴퓨터
 		if(num==1) { 
-			System.out.println("제조사 및 사양을 선택해 주세요. 1.삼성(i7) 2.엘지(i5)");
+			System.out.println("제조사 및 사양을 선택해 주세요. \n1.삼성(i7) 2.엘지(i5)");
 			num=sc.nextInt();
 			//컴퓨터 - 삼성 
 			if(num==1) {
@@ -201,8 +309,9 @@ public class HW1_market {
 					//가격 체크
 					if(c.moneyCheck(m.com[m.stock].price)) {
 						//구매
-						by.comBuy(c, m, m.com[m.stock].price);
-						System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						comBuy(c, m, m.com[m.stock].price);
+						//System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						c.moneyPrint();
 					}
 					//잔액 부족 
 					else {
@@ -222,21 +331,19 @@ public class HW1_market {
 					//가격 체크
 					if(c.moneyCheck(m.com[m.stock].price)) {
 						//구매 
-						by.comBuy(c, m, m.com[m.stock].price); 
-						System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						comBuy(c, m, m.com[m.stock].price); 
+						//System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						c.moneyPrint();
 					}
 					//잔액 부족 
 					else {
 						System.out.println("현재 보유 : "+c.money+". 잔액이 부족하여 구매가 어렵습니다.");
 					}
-
 				}
 				//재고 부족 
 				else {
 					System.out.println("재고가 없습니다.");
 				}
-
-
 			}
 			//컴퓨터 - 선택오류 
 			else {
@@ -244,20 +351,168 @@ public class HW1_market {
 			}
 		}
 		else if(num==2) {//에어컨
-
+			System.out.println("제조사 및 사양을 선택해 주세요. \n1.삼성-벽걸이 2.엘지-스탠드");
+			num=sc.nextInt();
+			//에어컨 - 삼성 
+			if(num==1) {
+				//재고 체크
+				//재고 있음 
+				if(m.acStock(num)) {
+					//가격 체크
+					if(c.moneyCheck(m.ac[m.stock].price)) {
+						//구매
+						acBuy(c, m, m.ac[m.stock].price);
+						//System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						c.moneyPrint();
+					}
+					//잔액 부족 
+					else {
+						System.out.println("현재 보유 : "+c.money+". 잔액이 부족하여 구매가 어렵습니다.");
+					}
+				}
+				//재고 부족 
+				else {
+					System.out.println("재고가 없습니다.");
+				}
+			}
+			//에어컨 - 엘지 
+			else if(num==2) {
+				//재고 체크
+				//재고 있음 
+				if(m.acStock(num)) {
+					//가격 체크
+					if(c.moneyCheck(m.ac[m.stock].price)) {
+						//구매 
+						acBuy(c, m, m.ac[m.stock].price); 
+						//System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						c.moneyPrint();
+					}
+					//잔액 부족 
+					else {
+						System.out.println("현재 보유 : "+c.money+". 잔액이 부족하여 구매가 어렵습니다.");
+					}
+				}
+				//재고 부족 
+				else {
+					System.out.println("재고가 없습니다.");
+				}
+			}
+			//컴퓨터 - 선택오류 
+			else {
+				System.out.println("잘못된 입력입니다.");
+			}
 		}
 		else if(num==3) { //냉장고 
-
+			System.out.println("제조사 및 사양을 선택해 주세요. \n1.삼성-양문형 2.엘지-4도어");
+			num=sc.nextInt();
+			//냉장고 - 삼성 
+			if(num==1) {
+				//재고 체크
+				//재고 있음 
+				if(m.rStock(num)) {
+					//가격 체크
+					if(c.moneyCheck(m.r[m.stock].price)) {
+						//구매
+						rBuy(c, m, m.r[m.stock].price);
+						//System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						c.moneyPrint();
+					}
+					//잔액 부족 
+					else {
+						System.out.println("현재 보유 : "+c.money+". 잔액이 부족하여 구매가 어렵습니다.");
+					}
+				}
+				//재고 부족 
+				else {
+					System.out.println("재고가 없습니다.");
+				}
+			}
+			//냉장고 - 엘지 
+			else if(num==2) {
+				//재고 체크
+				//재고 있음 
+				if(m.rStock(num)) {
+					//가격 체크
+					if(c.moneyCheck(m.r[m.stock].price)) {
+						//구매 
+						rBuy(c, m, m.r[m.stock].price); 
+						//System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						c.moneyPrint();
+					}
+					//잔액 부족 
+					else {
+						System.out.println("현재 보유 : "+c.money+". 잔액이 부족하여 구매가 어렵습니다.");
+					}
+				}
+				//재고 부족 
+				else {
+					System.out.println("재고가 없습니다.");
+				}
+			}
+			//냉장고 - 선택오류 
+			else {
+				System.out.println("잘못된 입력입니다.");
+			}
 		}
 		else if(num==4) {//공기청정기 
-
+			System.out.println("제조사 및 사양을 선택해 주세요. \n1.다이슨 2.엘지");
+			num=sc.nextInt();
+			//공청기 - 삼성 
+			if(num==1) {
+				//재고 체크
+				//재고 있음 
+				if(m.acnStock(num)) {
+					//가격 체크
+					if(c.moneyCheck(m.acn[m.stock].price)) {
+						//구매
+						acnBuy(c, m, m.acn[m.stock].price);
+						//System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						c.moneyPrint();
+					}
+					//잔액 부족 
+					else {
+						System.out.println("현재 보유 : "+c.money+". 잔액이 부족하여 구매가 어렵습니다.");
+					}
+				}
+				//재고 부족 
+				else {
+					System.out.println("재고가 없습니다.");
+				}
+			}
+			//냉장고 - 엘지 
+			else if(num==2) {
+				//재고 체크
+				//재고 있음 
+				if(m.acnStock(num)) {
+					//가격 체크
+					if(c.moneyCheck(m.acn[m.stock].price)) {
+						//구매 
+						acnBuy(c, m, m.acn[m.stock].price); 
+						//System.out.println(c.name+"이 가진 금액은 총 "+c.money+"입니다.");
+						c.moneyPrint();
+					}
+					//잔액 부족 
+					else {
+						System.out.println("현재 보유 : "+c.money+". 잔액이 부족하여 구매가 어렵습니다.");
+					}
+				}
+				//재고 부족 
+				else {
+					System.out.println("재고가 없습니다.");
+				}
+			}
+			//냉장고 - 선택오류 
+			else {
+				System.out.println("잘못된 입력입니다.");
+			}	
 		}
 		else {
 			System.out.println("잘못된 입력입니다. ");
 		}
-		
 	}
+}
 
+public class HW1_market {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -266,6 +521,7 @@ public class HW1_market {
 		m.market();
 
 		//손님 입장 : 금액을 순서대로 입력받아 손님 객체 생성
+		// 60원 이상 입력하는 조건 넣어야 함 
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("1번 손님 금액입력 : ");
@@ -277,20 +533,25 @@ public class HW1_market {
 		System.out.print("3번 손님 금액입력 : ");
 		Client c3 = new Client("3번 손님",sc.nextInt());
 
+		BuySystem bs = new BuySystem();
 		//물건구매 하기 
 		//모든 손님 가진돈이 60미만이면 구매 종료 
 		while(true) { 
+
+			/*
+			 * 강사님 피드백 : 손님도 배열로 넣어서 for문 
+			 */
 			//최소금액인지 확인 
-			if(c1.money>60) {
-				buycontroller(c1,m);
+			if(c1.money>=60) {
+				bs.buycontroller(c1, m);
 
 			}
-			else if(c2.money>60) {
-				buycontroller(c2,m);
+			else if(c2.money>=60) {
+				bs.buycontroller(c2,m);
 
 			}
-			else if(c3.money>60) {
-				buycontroller(c3,m);
+			else if(c3.money>=60) {
+				bs.buycontroller(c3,m);
 			}
 			else {
 				System.out.println("구매를 종료합니다.");
@@ -298,6 +559,17 @@ public class HW1_market {
 			}
 		}
 		//구매한 물건 기능 출력
+		System.out.println("1번손님 : ");
+		c1.productCheck();
+		System.out.println();
+
+		System.out.println("2번손님 : ");
+		c2.productCheck();
+		System.out.println();
+
+		System.out.println("3번손님 : ");
+		c3.productCheck();
+		System.out.println();
 	}
 
 }
