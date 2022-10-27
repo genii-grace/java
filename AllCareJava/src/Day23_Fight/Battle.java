@@ -11,6 +11,8 @@ class Battle {
 	int randomFunction () {
 		
 		return r.nextInt(3)+1;
+		//(int) Math.random()*3+1
+		//Math.random() : 0과 1 사이의 실수 
 	}
 	
 	

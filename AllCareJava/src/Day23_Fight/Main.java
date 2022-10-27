@@ -2,7 +2,7 @@ package Day23_Fight;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
 		Knight n = new Knight();
@@ -35,6 +35,9 @@ public class Main {
 				System.out.println("******************************");
 				continue;
 			}
+			
+			Thread.sleep(1000);
+			
 			System.out.println("=======================================");
 
 			//턴 소개
@@ -58,6 +61,7 @@ public class Main {
 				System.out.println("******************************");
 				break;
 			}
+			Thread.sleep(1000);
 
 		}
 
