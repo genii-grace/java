@@ -8,7 +8,7 @@ class Unit{
 	int attack;
 	int hitPoint;
 	final int MAX_HP;
-	int hp;
+
 	Unit(String name, int hp, int attack){
 		this.name=name;
 		MAX_HP=hp;
@@ -18,13 +18,13 @@ class Unit{
 
 class GroundUnit extends Unit{
 	GroundUnit(String name, int hp, int attack){
-		super("G unit",hp,attack);
+		super(name,hp,attack);
 	}
 }
 
 class AirUnit extends Unit{
-	AirUnit(int hp, int attack){
-		super("A unit", hp,attack);
+	AirUnit(String name, int hp, int attack){
+		super(name, hp,attack);
 	}
 }
 
@@ -49,6 +49,7 @@ class SCV extends GroundUnit implements Repairable{
 			Unit u = (Unit)r;
 			if(u!=null && u.MAX_HP != u.hitPoint) {
 				u.hitPoint+= 1;
+				
 			}
 			
 		}
@@ -58,7 +59,7 @@ class SCV extends GroundUnit implements Repairable{
 class Marine extends GroundUnit implements Heal{
 	Marine(){
 		super("Marine", 40,6);
-		hitPoint=MAX_HP;
+		hitPoint = MAX_HP;
 	}
 	
 }
@@ -85,6 +86,6 @@ class Medic extends GroundUnit implements Heal{
 	
 }
 
-public class TeatAbstract {
+public class TestAbstract {
 
 }
