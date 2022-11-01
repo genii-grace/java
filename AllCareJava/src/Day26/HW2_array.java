@@ -36,7 +36,7 @@ public class HW2_array {
 
 				//남아있는 현재상태 출력
 				for(int i=0; i<numbook.size(); i++) {
-					numbook.get(i).print();
+					//numbook.get(i).print();
 				}
 			}
 			else if(select==3) {//전체출력 
