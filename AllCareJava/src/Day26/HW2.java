@@ -1,3 +1,4 @@
+
 package Day26;
 
 import java.util.ArrayList;
@@ -26,9 +27,7 @@ class Member{
 	}
 	
 }
-
 public class HW2 {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -83,3 +82,4 @@ public class HW2 {
 	}
 
 }
+
