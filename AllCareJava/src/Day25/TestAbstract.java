@@ -77,15 +77,11 @@ class Medic extends GroundUnit implements Heal{
 		if(h instanceof Unit) {
 			Unit u = (Unit)h;
 			if(u!=null && u.MAX_HP != u.hitPoint) {
-				u.hitPoint += 1;
+				u.hitPoint += 2;
 			}
 			
 		}
 		
 	}
 	
-}
-
-public class TestAbstract {
-
 }

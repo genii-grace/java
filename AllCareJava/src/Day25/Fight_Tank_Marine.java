@@ -4,6 +4,9 @@ class Team1{ //tank, scv
 
 	Tank t = new Tank();
 	SCV s = new SCV();
+	
+	//Tank t = (Tank) new Unit("탱크",150,10);
+	//SCV s = (SCV) new Unit("SCV", 60, 5);
 
 	//탱크 피통 체크 
 	void hpCheck(Unit u) {
@@ -145,6 +148,7 @@ public class Fight_Tank_Marine {
 				}
 			}
 			else {//SCV
+				// +) 탱크 피통 확인 추가되어야 함
 				t1.s.repair(t1.t);
 				System.out.println("탱크 수리! hp : "+t1.t.hitPoint);
 				t1Turn++;
