@@ -41,11 +41,11 @@ public class HW1 {
 		//이어쓰기
 		FileWriter fw1 = new	FileWriter(s,true);
 		BufferedWriter bw1 = new BufferedWriter(fw1);
-		
+
 		//덮어쓰기
 		FileWriter fw2;
 		BufferedWriter bw2 = null;
-		
+
 		//읽어오기 
 		FileReader fr;
 		BufferedReader bf = null;
@@ -70,11 +70,11 @@ public class HW1 {
 
 				System.out.print("주소 : ");
 				String add = sc.next();
-				
+
 				//ArrayList에 객체 추가 
 				numbook.add(new Member(name,num,add));
 				System.out.println(name+"이/가 추가되었습니다.");
-				
+
 				//파일에 입력받은 내용 쓰기 
 				bw1.write(name+"\t"+num+"\t"+add+"\n");
 				bw1.flush();
@@ -92,7 +92,7 @@ public class HW1 {
 					}
 				}
 				//덮어쓰기
-				fw2 = new	FileWriter(s,false);
+				fw2 = new FileWriter(s,false);
 				bw2 = new BufferedWriter(fw2);
 
 				//새로운 내용으로 파일에 덮어쓰기 
@@ -101,7 +101,7 @@ public class HW1 {
 					bw2.flush();
 				}
 			}
-			
+
 			else if(select==3) {//전체출력 
 				fr = new FileReader(s);
 				bf = new BufferedReader(fr);
@@ -113,19 +113,19 @@ public class HW1 {
 				}
 			}
 			else if(select==4) {// 검색 
-				
+
 				boolean check = false;
 				int index =0;
 				System.out.println("검색할 이름을 입력하세요");
 				String input = sc.next();
-				
+
 				for(int i=0; i<numbook.size(); i++) {
 					if(numbook.get(i).name.equals(input)) {
 						check=true;
 						index=i;
 					}
 				}
-				
+
 				if(check==true) {
 					System.out.print("검색결과 : ");
 					numbook.get(index).print();
