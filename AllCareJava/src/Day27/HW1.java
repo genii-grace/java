@@ -2,6 +2,7 @@ package Day27;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -34,8 +35,37 @@ public class HW1 {
 		ArrayList<Member> numbook = new ArrayList<Member>();
 		Scanner sc = new Scanner(System.in);
 
+		
 		System.out.println("파일명을 입력하세요 : ");
 		String s= sc.next();
+		
+		
+		/*
+		 * 파일이 없으면 파일을 만들고
+		 * 파일이 있으면 파일을 가져와서 이어쓰기 
+		 * 분기 필요 
+		
+		
+		File f = new File(s);
+		//읽어오기 
+		FileReader fr;
+		BufferedReader bf = null;
+		
+		if(f.exists()) { //파일이 외부에 있음 
+			numbook.clear();
+			
+			fr= new FileReader(s);
+			bf = new BufferedReader(fr);
+			String line;
+			String[] splitLine = null;
+			
+			while((line=bf.readLine())!= null) {
+				//탭기준으로 스플릿해서 배열에 넣어주기 
+			}
+			
+		}
+		 */
+		
 		System.out.println(s+" 파일이 생성되었습니다.");
 
 		//이어쓰기
@@ -45,11 +75,12 @@ public class HW1 {
 		//덮어쓰기
 		FileWriter fw2;
 		BufferedWriter bw2 = null;
-
+		
 		//읽어오기 
 		FileReader fr;
 		BufferedReader bf = null;
 
+		
 		//기본 구분메뉴 세팅 
 		numbook.add(new Member("이름","번호","주소"));
 		bw1.write("이름\t번호\t주소\n");
@@ -83,7 +114,9 @@ public class HW1 {
 			else if(select==2) {// 삭제
 				System.out.println("삭제할 이름을 입력하세요 : ");
 				String input = sc.next();
-
+				/*
+				 * 삭제할 내용이 없는 경우도 분기 필요 
+				 */
 				//ArrayList에서 삭제
 				for(int i=0; i<numbook.size();i++) {
 					if(numbook.get(i).name.equals(input)) {
@@ -106,15 +139,18 @@ public class HW1 {
 				fr = new FileReader(s);
 				bf = new BufferedReader(fr);
 
-				int check;
+				String check;
 				//읽어올 내용이 없을 때(-1)까지 반복 
-				while( (check=bf.read()) != -1) {
-					System.out.print((char)check);
+				while( (check=bf.readLine()) != null) {
+					System.out.print(check+"\n");
+					
 				}
 			}
 			else if(select==4) {// 검색 
 
 				boolean check = false;
+				//인덱스를 -1 로 정의한 이후에 true/false 를 -1 또는 다른 값으로 분기 가능
+				
 				int index =0;
 				System.out.println("검색할 이름을 입력하세요");
 				String input = sc.next();
@@ -123,6 +159,7 @@ public class HW1 {
 					if(numbook.get(i).name.equals(input)) {
 						check=true;
 						index=i;
+						break;
 					}
 				}
 
