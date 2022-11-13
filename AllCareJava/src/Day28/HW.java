@@ -13,7 +13,7 @@ class Account {
 		
 		/*
 		try {
-			Thread.sleep(100); //실행하고 재워놓으면서 순서 정리 
+			Thread.sleep(10); //실행하고 재워놓으면서 순서 정리 
 		}
 		catch(InterruptedException e) {
 			e.printStackTrace();
